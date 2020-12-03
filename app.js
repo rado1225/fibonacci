@@ -1,11 +1,14 @@
 'use strict';
+const FibSeq = [];
 function fib(n) {
   if (n === 0) {
-    return 0;
+    FibSeq.push(0);
   } else if (n === 1) {
-    return 1;
-  } 
-  return fib(n - 1) + fib(n - 2);
+    FibSeq.push(1);
+  } else {
+    FibSeq.push(FibSeq[n - 1] + FibSeq[n - 2]);
+  }
+  return FibSeq[n];
 }
 const length = 40;
 for (let i = 0; i <= length; i++) {
